@@ -90,12 +90,12 @@ body{
 .corner{position:absolute;top:-12px;width:clamp(126px,40%,204px);height:auto;z-index:2;pointer-events:none;overflow:visible}
 .corner.tl{left:-12px}.corner.tr{right:-12px}
 .frame{position:relative;border:1px solid rgba(138,111,184,.75);outline:1px solid rgba(138,111,184,.32);outline-offset:-7px;
-  padding-top:clamp(70px,18%,96px);padding-bottom:0;padding-inline:clamp(16px,6vw,30px);display:flex;flex-direction:column;gap:30px;
+  padding-top:clamp(74px,20%,104px);padding-bottom:28px;padding-inline:clamp(16px,6vw,30px);display:flex;flex-direction:column;gap:30px;
   background:radial-gradient(ellipse 85% 35% at 50% 0%,rgba(155,132,196,.16),transparent 75%)}
 section{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;min-width:0}
 
 .bismillah{font-family:var(--f-arabic);font-size:clamp(22px,6.4vw,28px);line-height:1.6;color:var(--copper-light);direction:rtl}
-.niche-wrap{position:relative;width:min(100%,260px)}
+.niche-wrap{position:relative;width:min(100%,290px);margin-bottom:17%}
 .niche{width:100%;height:auto;display:block;overflow:visible}
 .garland-niche{position:absolute;left:-9%;width:118%;top:79%;height:auto;overflow:visible;pointer-events:none}
 
@@ -166,13 +166,7 @@ section{display:flex;flex-direction:column;align-items:center;text-align:center;
 .wa .go{font-family:var(--f-caps);font-size:10px;letter-spacing:.22em;color:var(--gold)}
 .garland-end{width:min(100%,330px);height:auto;display:block;overflow:visible;margin-top:10px}
 
-.sky{position:absolute;left:0;top:0;width:100%;height:auto;pointer-events:none;z-index:1}
-.star{animation:tw 2.4s ease-in-out infinite}@keyframes tw{50%{opacity:.25}}
-.lantern{transform-box:fill-box;transform-origin:50% 0;animation:sway 3.2s ease-in-out infinite}@keyframes sway{0%,100%{rotate:-3deg}50%{rotate:3deg}}
-.glow{animation:flick 1.6s ease-in-out infinite}@keyframes flick{50%{opacity:.6}}
-.skyline{display:block;width:calc(100% + 2*clamp(16px,6vw,30px));max-width:none;margin-inline:calc(-1*clamp(16px,6vw,30px));height:auto;margin-top:-6px}
-section,.frame>*{position:relative;z-index:2}
-.petal{position:fixed;top:-30px;width:9px;height:9px;border-radius:1px;rotate:45deg;background:linear-gradient(135deg,#ffffff,#a993cf);opacity:.85;pointer-events:none;z-index:20;animation:fall linear forwards}
+.petal{position:fixed;top:-30px;width:12px;height:14px;border-radius:70% 0 70% 0;background:linear-gradient(135deg,#f3ecfc,#b9a2dc);opacity:.85;pointer-events:none;z-index:20;animation:fall linear forwards}
 @keyframes fall{to{transform:translate(var(--dx),110vh) rotate(560deg);opacity:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -205,8 +199,6 @@ section,.frame>*{position:relative;z-index:2}
     <filter id="soft" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.6" flood-color="#4a3570" flood-opacity=".22"/></filter>
     <radialGradient id="lamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9b8" stop-opacity=".9"/><stop offset="1" stop-color="#ffe9b8" stop-opacity="0"/></radialGradient>
     <pattern id="liner" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" fill="#d9ccef"/><g fill="#f6f1fd"><circle cx="6.5" cy="4.2" r="2.2"/><circle cx="8.8" cy="6.5" r="2.2"/><circle cx="6.5" cy="8.8" r="2.2"/><circle cx="4.2" cy="6.5" r="2.2"/></g><circle cx="6.5" cy="6.5" r="1.2" fill="#a993cf"/><g fill="#c3b0e6"><circle cx="19.5" cy="17.2" r="2"/><circle cx="21.8" cy="19.5" r="2"/><circle cx="19.5" cy="21.8" r="2"/><circle cx="17.2" cy="19.5" r="2"/></g><circle cx="19.5" cy="19.5" r="1.1" fill="#f6f1fd"/></pattern>
-    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6fb8"/><stop offset="1" stop-color="#5a4386"/></linearGradient>
-    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bba9dd"/><stop offset="1" stop-color="#a28bcf"/></linearGradient>
     <linearGradient id="leafA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#456c5c"/><stop offset="1" stop-color="#8fae98"/></linearGradient>
     <linearGradient id="leafB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a8673"/><stop offset="1" stop-color="#b6cbb8"/></linearGradient>
     <linearGradient id="leafC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ea39a"/><stop offset="1" stop-color="#bcd2ca"/></linearGradient>
@@ -228,6 +220,7 @@ section,.frame>*{position:relative;z-index:2}
       <path d="M0 0L200 168L400 0" fill="none" stroke="#cbbce4" stroke-width=".8"/>
     </svg></div>
     <div class="flap"><svg class="face" viewBox="0 0 400 168" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H400L200 168Z" fill="#f1ebf9" stroke="#b8a5d6" stroke-width="1.1"/></svg><svg class="face back" viewBox="0 0 400 168" preserveAspectRatio="none" aria-hidden="true"><path d="M0 168H400L200 0Z" fill="url(#liner)" stroke="#b8a5d6" stroke-width="1.1"/></svg></div>
+    <svg class="env-flora flora" data-kind="envelope" viewBox="0 0 400 320" aria-hidden="true"></svg>
     <div class="env-names">Meerab &amp; Yousaf</div>
     <div class="seal"><svg viewBox="0 0 408 753" aria-hidden="true"><use href="#mono" fill="#f8f4fe"/></svg></div>
   </button>
@@ -236,7 +229,8 @@ section,.frame>*{position:relative;z-index:2}
 
 <main class="invite" id="invite" hidden>
   <article class="card" id="card">
-    <svg class="sky" id="sky" viewBox="0 0 500 300" preserveAspectRatio="xMidYMin meet" aria-hidden="true"></svg>
+    <svg class="corner tl flora" data-kind="corner" viewBox="0 0 240 240" aria-hidden="true"></svg>
+    <svg class="corner tr flora" data-kind="corner" data-mirror="x" viewBox="0 0 240 240" aria-hidden="true"></svg>
     <div class="frame">
 
       <section aria-label="Monogram">
@@ -253,6 +247,7 @@ section,.frame>*{position:relative;z-index:2}
             <path d="M6 420H294" stroke="#8a6fb8" stroke-width="1.6"/>
             <use href="#mono" x="73" y="104" width="150" height="277" fill="url(#foil)"/>
           </svg>
+          <svg class="garland-niche flora" data-kind="garland" viewBox="0 0 320 130" aria-hidden="true"></svg>
         </div>
       </section>
 
@@ -263,7 +258,7 @@ section,.frame>*{position:relative;z-index:2}
       </section>
 
       <section id="names-sec">
-        <svg class="hair" viewBox="0 0 200 10" aria-hidden="true"><path d="M0 5H90M110 5H200" stroke="currentColor" stroke-width=".8"/><circle cx="100" cy="5" r="2.2" fill="currentColor"/><circle cx="82" cy="5" r="1.1" fill="currentColor"/><circle cx="118" cy="5" r="1.1" fill="currentColor"/></svg>
+        <svg class="sprig flora" data-kind="sprig" viewBox="0 0 220 44" aria-hidden="true"></svg>
         <p class="hosts">
           <span class="host">Mr. &amp; Mrs. Mamoon</span>
         </p>
@@ -306,7 +301,7 @@ section,.frame>*{position:relative;z-index:2}
       </section>
 
       <section>
-        <svg class="hair" viewBox="0 0 200 10" aria-hidden="true"><path d="M0 5H90M110 5H200" stroke="currentColor" stroke-width=".8"/><circle cx="100" cy="5" r="2.2" fill="currentColor"/><circle cx="82" cy="5" r="1.1" fill="currentColor"/><circle cx="118" cy="5" r="1.1" fill="currentColor"/></svg>
+        <svg class="sprig flora" data-kind="sprig" viewBox="0 0 220 44" aria-hidden="true"></svg>
         <div class="dua">بَارَكَ ٱللَّٰهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا</div>
         <p class="closing">Your presence and prayers will make our joy complete.</p>
         <span class="eyebrow">RSVP on WhatsApp</span>
@@ -316,9 +311,9 @@ section,.frame>*{position:relative;z-index:2}
           <a class="wa" href="https://wa.me/923008475034?text=Assalam%20o%20Alaikum!%20I%20will%20attend%20the%20Nikkah%20of%20Meerab%20%26%20Yousaf%20on%20Friday%2C%2013%20November%20at%203%3A00%20PM." target="_blank" rel="noopener" aria-label="RSVP on WhatsApp to +92 300 8475034">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg><span class="num">+92 300 8475034</span><span class="go">Message</span></a>
         </div>
+        <svg class="garland-end flora" data-kind="garland" viewBox="0 0 320 130" aria-hidden="true"></svg>
       </section>
 
-      <svg class="skyline" id="skyline" viewBox="0 0 540 230" aria-hidden="true"></svg>
     </div>
   </article>
 </main>
@@ -399,6 +394,9 @@ const Flora=(()=>{
     s+=`<path d="M70 136H119M121 136H170" stroke="${L}" stroke-opacity=".6" stroke-width=".9"/><circle cx="116" cy="138" r="1.6" fill="${L}"/><circle cx="124" cy="138" r="1.6" fill="${L}"/>`;
     // hanging lanterns
     [[96,58],[144,58]].forEach(([x,y])=>{s+=`<path d="M${x} ${y-24}V${y}" stroke="${L}" stroke-width=".8"/><circle cx="${x}" cy="${y+10}" r="14" fill="url(#lamp)"/><path d="M${x-5} ${y}H${x+5}L${x+7} ${y+5}V${y+15}L${x+5} ${y+19}H${x-5}L${x-7} ${y+15}V${y+5}Z" fill="#fff6e0" stroke="${L}" stroke-width="1"/><path d="M${x} ${y+5}V${y+15}" stroke="${L}" stroke-opacity=".5" stroke-width=".7"/>`;});
+    // plants at pillar bases
+    s+=leaf(52,168,-150,46,9)+leaf(54,168,-120,38,8,'leafB')+leaf(60,168,-100,30,7)+leaf(184,168,-30,46,9)+leaf(182,168,-60,38,8,'leafB')+leaf(176,168,-80,30,7);
+    s+=rose(40,160,11,'pBlush',10)+blossom(30,150,6)+blossom(52,150,5,'#c9b4ea')+rose(200,160,11,'pBlush',-20)+blossom(210,150,6)+blossom(188,150,5,'#c9b4ea');
     // map pin over the arch
     s+=`<path d="M120 30C112 21 109 16 109 12A11 11 0 0 1 131 12C131 16 128 21 120 30Z" fill="${L}"/><circle cx="120" cy="12" r="4" fill="#ffffff"/>`;
     return s;
@@ -419,58 +417,6 @@ const Flora=(()=>{
 })();
 Flora.draw();
 
-{
-const fx=n=>+n.toFixed(1);
-const dome=(x,by,w,h)=>`<path d="M${fx(x-w/2)} ${by}C${fx(x-w*.66)} ${fx(by-h*.38)} ${fx(x-w*.42)} ${fx(by-h*.74)} ${x} ${fx(by-h)}C${fx(x+w*.42)} ${fx(by-h*.74)} ${fx(x+w*.66)} ${fx(by-h*.38)} ${fx(x+w/2)} ${by}Z"/>`;
-const crescent=(cx,cy,r)=>`<path d="M${fx(cx+r*.2)} ${fx(cy-r)}A${r} ${r} 0 1 0 ${fx(cx+r*.2)} ${fx(cy+r)}A${fx(r*.78)} ${fx(r*.78)} 0 1 1 ${fx(cx+r*.2)} ${fx(cy-r)}Z"/>`;
-const finial=(x,y,len,r)=>`<rect x="${fx(x-.8)}" y="${fx(y-len)}" width="1.6" height="${len}"/><circle cx="${x}" cy="${fx(y-len*.45)}" r="${fx(r*.55)}"/>${crescent(x,fx(y-len-r),r)}`;
-const minaret=(x,by,w,h)=>{const top=by-h;return `<rect x="${fx(x-w/2)}" y="${top}" width="${w}" height="${h}"/>`+
-  `<rect x="${fx(x-w/2-4)}" y="${fx(by-h*.62)}" width="${w+8}" height="4"/><rect x="${fx(x-w/2-4)}" y="${fx(top+8)}" width="${w+8}" height="4"/>`+
-  dome(x,top,w*1.15,w*1.5)+finial(x,fx(top-w*1.5),w*.9,w*.32)};
-const arch=(x,by,w,h,fill)=>`<path fill="${fill}" d="M${fx(x-w/2)} ${by}V${fx(by-h+w*.55)}Q${fx(x-w/2)} ${fx(by-h+w*.05)} ${x} ${fx(by-h)}Q${fx(x+w/2)} ${fx(by-h+w*.05)} ${fx(x+w/2)} ${fx(by-h+w*.55)}V${by}Z"/>`;
-function mosque(cx,by,s,win){
-  let g='';
-  const bw=230*s,bh=62*s;
-  g+=`<rect x="${fx(cx-bw/2)}" y="${fx(by-bh)}" width="${fx(bw)}" height="${fx(bh)}"/>`;
-  // crenellation line
-  for(let x=cx-bw/2;x<cx+bw/2-1;x+=12*s) g+=`<rect x="${fx(x)}" y="${fx(by-bh-5*s)}" width="${fx(7*s)}" height="${fx(5*s)}"/>`;
-  // drum + main dome
-  g+=`<rect x="${fx(cx-56*s)}" y="${fx(by-bh-22*s)}" width="${fx(112*s)}" height="${fx(22*s)}"/>`+dome(cx,fx(by-bh-22*s),120*s,104*s)+finial(cx,fx(by-bh-126*s),16*s,6*s);
-  // side domes
-  [-1,1].forEach(d=>{const x=cx+d*80*s;g+=`<rect x="${fx(x-22*s)}" y="${fx(by-bh-10*s)}" width="${fx(44*s)}" height="${fx(10*s)}"/>`+dome(x,fx(by-bh-10*s),48*s,42*s)+finial(x,fx(by-bh-52*s),9*s,3.6*s);});
-  // minarets
-  [-1,1].forEach(d=>g+=minaret(cx+d*(bw/2+10*s),by,13*s,150*s));
-  // windows / door
-  const ws=[];
-  ws.push(arch(cx,by,30*s,46*s,win));
-  [-1,1].forEach(d=>{[44,68,92].forEach(o=>ws.push(arch(cx+d*o*s,fx(by-14*s),11*s,26*s,win)));});
-  return {g,ws:ws.join('')};
-}
-function small(cx,by,s){
-  let g=`<rect x="${fx(cx-40*s)}" y="${fx(by-40*s)}" width="${fx(80*s)}" height="${fx(40*s)}"/>`+dome(cx,fx(by-40*s),70*s,62*s)+finial(cx,fx(by-102*s),12*s,4.5*s)+minaret(cx+52*s,by,10*s,112*s);
-  return g;
-}
-// skyline
-const back = small(70,206,1.05)+small(470,206,1.0)+minaret(150,206,9,118)+minaret(392,206,9,124)+dome(30,206,60,48)+dome(516,206,56,44);
-const m=mosque(270,214,.86,'#ece4f7');
-document.getElementById('skyline').innerHTML=
-  `<g class="back-row" fill="url(#mid)" opacity=".7">${back}</g>`+
-  `<g class="front-row"><g fill="url(#front)">${m.g}<rect x="0" y="212" width="540" height="18"/></g>${m.ws}`+
-  `<g fill="#fff1c9" opacity=".9">${[-58,-38,38,58].map(o=>`<circle cx="${270+o}" cy="${214-24}" r="1.6"/>`).join('')}</g></g>`;
-
-// sky: moon, stars, lanterns
-let sky=`<g class="moon" fill="#c9b8e6">${crescent(420,84,18)}</g>`;
-[[30,150,1.4,0],[140,90,1.1,.6],[360,110,1.3,1.2],[474,150,1.5,.3],[40,230,1,1.6],[462,250,1.1,.9],[300,30,1,2],[200,40,1.1,1.4]].forEach(([x,y,r,d])=>{
-  sky+=`<g class="star" style="animation-delay:-${d}s" fill="#a993cf"><path d="M${x} ${fx(y-r*4)}L${fx(x+r)} ${fx(y-r)}L${fx(x+r*4)} ${y}L${fx(x+r)} ${fx(y+r)}L${x} ${fx(y+r*4)}L${fx(x-r)} ${fx(y+r)}L${fx(x-r*4)} ${y}L${fx(x-r)} ${fx(y-r)}Z"/></g>`;});
-const lantern=(x,len,sc,delay)=>{const y=len;return `<g class="lantern" style="animation-delay:-${delay}s"><path d="M${x} 16V${y}" stroke="#a993cf" stroke-width="1"/>`+
-  `<circle class="glow" cx="${x}" cy="${fx(y+16*sc)}" r="${fx(26*sc)}" fill="url(#lamp)"/>`+
-  `<path d="M${fx(x-7*sc)} ${y}H${fx(x+7*sc)}L${fx(x+12*sc)} ${fx(y+8*sc)}V${fx(y+24*sc)}L${fx(x+7*sc)} ${fx(y+31*sc)}H${fx(x-7*sc)}L${fx(x-12*sc)} ${fx(y+24*sc)}V${fx(y+8*sc)}Z" fill="#fff8e6" fill-opacity=".9" stroke="#8a6fb8" stroke-width="1.3"/>`+
-  `<path d="M${fx(x-12*sc)} ${fx(y+8*sc)}H${fx(x+12*sc)}M${fx(x-12*sc)} ${fx(y+24*sc)}H${fx(x+12*sc)}M${x} ${fx(y+8*sc)}V${fx(y+24*sc)}" stroke="#8a6fb8" stroke-opacity=".55" stroke-width=".9"/>`+
-  `<path d="M${fx(x-4*sc)} ${fx(y-6*sc)}Q${x} ${fx(y-12*sc)} ${fx(x+4*sc)} ${fx(y-6*sc)}L${fx(x+7*sc)} ${y}H${fx(x-7*sc)}Z" fill="#8a6fb8"/><path d="M${x} ${fx(y+31*sc)}V${fx(y+40*sc)}" stroke="#8a6fb8" stroke-width="1.2"/><circle cx="${x}" cy="${fx(y+42*sc)}" r="${fx(2.2*sc)}" fill="#8a6fb8"/></g>`;};
-sky+=lantern(54,34,1,0)+lantern(104,14,.8,.8)+lantern(396,14,.8,1.5)+lantern(446,34,1,2.2);
-document.getElementById('sky').innerHTML=sky;
-
-}
 /* ---------- Opening sequence: invitation stays hidden until the envelope is opened ---------- */
 const stage=document.getElementById('stage'), env=document.getElementById('env'), invite=document.getElementById('invite');
 let opened=false;
