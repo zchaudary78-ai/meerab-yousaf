@@ -53,6 +53,11 @@ body{
 .stage{min-height:calc(100vh - 84px);min-height:calc(100svh - 84px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding-top:110px;transition:opacity .7s ease,transform .7s ease}
 .stage.leaving{opacity:0;transform:scale(.96)}
+.guest-env{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;transition:opacity .4s}
+.guest-env span{font-family:var(--f-caps);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.guest-env b{font-family:var(--f-script);font-weight:400;font-size:clamp(34px,10vw,44px);line-height:1.15;color:var(--copper-deep);max-width:16ch;text-wrap:balance}
+.stage.opening .guest-env{opacity:0}
+.dear{font-family:var(--f-script);font-size:clamp(30px,9vw,38px);line-height:1.2;color:var(--copper-deep);margin:0 0 2px;max-width:16ch;text-wrap:balance}
 .stage-eyebrow{font-family:var(--f-caps);font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin:0;transition:opacity .4s}
 .stage-hint{font-family:var(--f-serif);font-style:italic;font-size:17px;color:var(--mist);margin:0;animation:pulse 2.4s ease-in-out infinite;transition:opacity .4s}
 .stage.opening .stage-eyebrow,.stage.opening .stage-hint{opacity:0;animation:none}
@@ -211,6 +216,7 @@ section{display:flex;flex-direction:column;align-items:center;text-align:center;
 
 <!-- Sealed envelope: the only thing visible until opened -->
 <div class="stage" id="stage">
+  <div class="guest-env" id="guest-env" hidden><span>Specially for</span><b id="guest-env-name"></b></div>
   <p class="stage-eyebrow">You are invited</p>
   <button class="env" id="env" type="button" aria-label="Open the invitation" aria-controls="invite" aria-expanded="false">
     <div class="env-back"></div>
@@ -263,6 +269,7 @@ section{display:flex;flex-direction:column;align-items:center;text-align:center;
 
       <section id="names-sec">
         <svg class="sprig flora" data-kind="sprig" viewBox="0 0 220 44" aria-hidden="true"></svg>
+        <p class="dear" id="dear" hidden>Dear <span id="dear-name"></span>,</p>
         <p class="hosts">
           <span class="host">Mr. &amp; Mrs. Mamoon</span>
         </p>
@@ -324,6 +331,20 @@ section{display:flex;flex-direction:column;align-items:center;text-align:center;
 
 <script>
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Personal guest name from the link: ?to=Ahmed%20Family ---------- */
+(function(){
+  let name='';
+  try{ name=(new URLSearchParams(location.search).get('to')||'').replace(/[\u0000-\u001f<>]/g,'').replace(/\s+/g,' ').trim().slice(0,60); }catch(e){}
+  if(!name) return;
+  document.getElementById('guest-env-name').textContent=name;
+  document.getElementById('guest-env').hidden=false;
+  document.getElementById('dear-name').textContent=name;
+  document.getElementById('dear').hidden=false;
+  document.title=name+' · Meerab & Yousaf Nikkah';
+  const msg='Assalam o Alaikum! This is '+name+'. In sha Allah we will attend the Nikkah of Meerab & Yousaf on Friday, 13 November at 3:00 PM.';
+  document.querySelectorAll('a.wa').forEach(a=>{const u=new URL(a.href);u.searchParams.set('text',msg);a.href=u.toString();});
+})();
 
 /* ---------- Florals (drawn in code: roses, anemones, ranunculus, blossoms, sage leaves, eucalyptus) ---------- */
 const Flora=(()=>{
