@@ -363,7 +363,13 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ---------- Personal guest name from the link: ?to=Ahmed%20Family ---------- */
 (function(){
   let name='';
-  try{ name=(new URLSearchParams(location.search).get('to')||'').replace(/[\u0000-\u001f<>]/g,'').replace(/\s+/g,' ').trim().slice(0,60); }catch(e){}
+  try{
+    // Read everything after "to=" so names with a raw "&" (e.g. ?to=Mr&Mrs Jamshaid) still come through whole
+    let raw=location.search.replace(/^\?/,''); const i=raw.search(/(^|&)to=/i);
+    if(i>=0){ raw=raw.slice(raw.indexOf('=',i)+1).replace(/&v=\d*$/i,'').replace(/\+/g,' ');
+      try{ raw=decodeURIComponent(raw); }catch(e){ raw=unescape(raw); } }
+    else raw='';
+    name=raw.replace(/[\u0000-\u001f<>]/g,'').replace(/\s+/g,' ').trim().slice(0,60); }catch(e){}
   if(!name) return;
   document.getElementById('guest-env-name').textContent=name;
   document.getElementById('guest-env').hidden=false;

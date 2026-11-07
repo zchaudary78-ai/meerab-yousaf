@@ -34,7 +34,7 @@ button:focus-visible,.btn:focus-visible{outline:2px solid var(--plum);outline-of
 ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 li{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:8px;min-width:0}
 li .who{font-family:Marcellus,Georgia,serif;font-size:17px;letter-spacing:.04em}
-li .url{font-size:13px;color:var(--muted);word-break:break-all;user-select:all}
+li .url{font-size:12px;color:var(--muted);white-space:nowrap;overflow-x:auto;user-select:all}
 li .row button,li .row .btn{padding:9px 12px;font-size:11px}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--plum);color:#fff;padding:9px 16px;border-radius:20px;font-size:15px;opacity:0;transition:opacity .25s;pointer-events:none}
 .toast.on{opacity:1}
@@ -67,7 +67,7 @@ const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},se
 $('names').value=store.get('guestNames')||'';
 const m=store.get('guestMsg'); if(m) $('msg').value=m;
 
-const linkFor=n=>BASE+'?to='+encodeURIComponent(n);
+const linkFor=n=>BASE+'?to='+encodeURIComponent(n).replace(/%20/g,'+');
 function toast(t){const el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('on'),1600);}
 async function copy(text,done){
   try{await navigator.clipboard.writeText(text);toast(done);}
