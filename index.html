@@ -20,7 +20,7 @@
 <meta name="supported-color-schemes" content="light only">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Marcellus&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Josefin+Slab:ital,wght@0,400;0,600;1,400&family=Gilda+Display&family=Pinyon+Script&display=swap">
 <style>
 /* Layout: a sealed lavender envelope alone on a pale lilac jaali ground; opening it lifts the letter out and reveals one white card, framed by lilac roses, ivory anemones and sage leaves around the copper monogram niche. One committed light look. */
 :root{
@@ -29,8 +29,8 @@
   --blush:#a98bcf; --gold:#7c65a6; --ivory:#3b2f4d; --mist:#76698a;
   --paper:#f3edfa; --paper-2:#e2d8f1; --env-ink:#4a3a66;
   --f-script:"Pinyon Script","Snell Roundhand","Brush Script MT",cursive;
-  --f-caps:"Marcellus","Trajan Pro","Optima",Georgia,serif;
-  --f-serif:"EB Garamond",Garamond,Georgia,"Times New Roman",serif;
+  --f-caps:"Gilda Display","Didot","Bodoni 72",Georgia,serif;
+  --f-serif:"Josefin Slab","Rockwell",Georgia,"Times New Roman",serif;
   --f-arabic:"Amiri","Traditional Arabic","Scheherazade New",serif;
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .25 0 0 0 0 .45 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   color-scheme:only light;
@@ -40,7 +40,7 @@ html,body{color-scheme:only light;forced-color-adjust:none}
 @media (prefers-color-scheme:dark){html,body{color-scheme:only light;background-color:#f4f0f9;color:#3b2f4d}}
 [hidden]{display:none!important}
 body{
-  margin:0;color:var(--ivory);font-family:var(--f-serif);font-size:18px;line-height:1.55;overflow-x:hidden;
+  margin:0;color:var(--ivory);font-family:var(--f-serif);font-size:19px;font-weight:400;line-height:1.55;overflow-x:hidden;
   background-color:var(--night);
   background-image:
     radial-gradient(ellipse 90% 50% at 50% 0%,rgba(155,132,196,.22),transparent 70%),radial-gradient(ellipse 70% 40% at 50% 100%,rgba(232,200,226,.35),transparent 70%),
@@ -57,7 +57,8 @@ body{
 .guest-env span{font-family:var(--f-caps);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
 .guest-env b{font-family:var(--f-script);font-weight:400;font-size:clamp(34px,10vw,44px);line-height:1.15;color:var(--copper-deep);max-width:16ch;text-wrap:balance}
 .stage.opening .guest-env{opacity:0}
-.dear{font-family:var(--f-script);font-size:clamp(30px,9vw,38px);line-height:1.2;color:var(--copper-deep);margin:0 0 2px;max-width:16ch;text-wrap:balance}
+.dear{font-family:var(--f-script);font-size:clamp(30px,9vw,38px);line-height:1.2;color:var(--copper-deep);margin:0 0 6px;max-width:16ch;text-wrap:balance}
+.dear::after{content:"";display:block;width:56px;height:1px;margin:12px auto 0;background:var(--gold);opacity:.6}
 .sb-bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;max-width:460px;margin:0 auto 14px;padding:14px 16px;border-radius:10px;
   background:#4f3878;color:#fff;padding-right:40px;box-shadow:0 10px 24px rgba(40,25,70,.3);font-family:var(--f-serif);font-size:16px;line-height:1.4;display:flex;flex-direction:column;gap:10px}
 .sb-bar p{margin:0}
@@ -282,7 +283,7 @@ section{display:flex;flex-direction:column;align-items:center;text-align:center;
 
       <section id="names-sec">
         <svg class="sprig flora" data-kind="sprig" viewBox="0 0 220 44" aria-hidden="true"></svg>
-        <p class="dear" id="dear" hidden>Dear <span id="dear-name"></span>,</p>
+        <p class="dear" id="dear" hidden><span id="dear-name"></span></p>
         <p class="hosts">
           <span class="host">Mr. &amp; Mrs. Mamoon</span>
         </p>
